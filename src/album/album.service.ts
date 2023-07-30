@@ -75,6 +75,12 @@ export class AlbumService {
     const albumIndex = this.albums.findIndex((album) => album.id === id);
     if (albumIndex !== -1) {
       this.albums.splice(albumIndex, 1);
+
+      // const track = this.trackService.findOne(id);
+      // this.trackService.update(id, {
+      //   ...track,
+      //   albumId: null,
+      // });
       return null;
     } else {
       throw new Error();
