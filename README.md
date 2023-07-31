@@ -1,72 +1,145 @@
 # Home Library Service
 
-## Prerequisites
+## scripts
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- **start:prod** - the application is run in production mode
+- **start:dev** - the application is run in development mode
+- **build** - build project
+- **lint** - start eslint
+- **format** - eslint fix
+- **test** - start tests
 
-## Downloading
+## implementation
 
-```
-git clone {repository URL}
-```
+### Users (/user route)*
 
-## Installing NPM modules
+**GET /user** - get all users  
+- Server should answer with status code 200 and all users records  
 
-```
-npm install
-```
+**GET /user/:id** - get single user by id  
 
-## Running application
+- Server should answer with status code 200 and and record with id === userId if it exists  
+- Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === userId doesn't exist  
 
-```
-npm start
-```
+**POST /user** - create user (following DTO should be used) CreateUserDto  
+- Server should answer with status code 201 and newly created record if request is valid  
+- Server should answer with status code 400 and corresponding message if request body does not contain required fields  
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+**PUT /user/:id** - update user's password UpdatePasswordDto (with attributes)  
+- Server should answer with status code 200 and updated record if request is valid  
+- Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === userId doesn't exist  
+- Server should answer with status code 403 and corresponding message if oldPassword is wrong  
 
-## Testing
+**DELETE /user/:id** - delete user  
+- Server should answer with status code 204 if the record is found and deleted  
+- Server should answer with status code 400 and corresponding message if userId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === userId doesn't exist  
 
-After application running open new terminal and enter:
+### Tracks (/track route)
 
-To run all tests without authorization
+**GET /track** - get all tracks  
+- Server should answer with status code 200 and all tracks records  
 
-```
-npm run test
-```
+**GET /track/:id** - get single track by id  
+- Server should answer with status code 200 and and record with id === trackId if it exists  
+- Server should answer with status code 400 and corresponding message if trackId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === trackId doesn't exist  
 
-To run only one of all test suites
+**POST /track** - create new track  
+- Server should answer with status code 201 and newly created record if request is valid  
+- Server should answer with status code 400 and corresponding message if request body does not contain required fields  
 
-```
-npm run test -- <path to suite>
-```
+**PUT /track/:id** - update track info  
+- Server should answer with status code 200 and updated record if request is valid  
+- Server should answer with status code 400 and corresponding message if trackId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === trackId doesn't exist  
 
-To run all test with authorization
+**DELETE /track/:id** - delete track  
+- Server should answer with status code 204 if the record is found and deleted  
+- Server should answer with status code 400 and corresponding message if trackId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === trackId doesn't exist  
 
-```
-npm run test:auth
-```
+### Artists (/artist route)  
 
-To run only specific test suite with authorization
+**GET /artist** - get all artists  
+- Server should answer with status code 200 and all artists records  
 
-```
-npm run test:auth -- <path to suite>
-```
+**GET /artist/:id** - get single artist by id  
+- Server should answer with status code 200 and and record with id === artistId if it exists  
+- Server should answer with status code 400 and corresponding message if artistId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === artistId doesn't exist  
 
-### Auto-fix and format
+**POST /artist** - create new artist  
+- Server should answer with status code 201 and newly created record if request is valid  
+- Server should answer with status code 400 and corresponding message if request body does not contain required fields  
 
-```
-npm run lint
-```
+**PUT /artist/:id** - update artist info  
+- Server should answer with status code 200 and updated record if request is valid  
+- Server should answer with status code 400 and corresponding message if artist is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === artistId doesn't exist  
 
-```
-npm run format
-```
+**DELETE /artist/:id** - delete album  
+- Server should answer with status code 204 if the record is found and deleted  
+- Server should answer with status code 400 and corresponding message if artistId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === artistId doesn't exist  
 
-### Debugging in VSCode
+### Albums (/album route)  
 
-Press <kbd>F5</kbd> to debug.
+**GET /album** - get all albums  
+- Server should answer with status code 200 and all albums records  
 
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+**GET /album/:id** - get single album by id  
+- Server should answer with status code 200 and and record with id === albumId if it exists  
+- Server should answer with status code 400 and corresponding message if albumId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === albumId doesn't exist  
+
+**POST /album** - create new album  
+- Server should answer with status code 201 and newly created record if request is valid  
+- Server should answer with status code 400 and corresponding message if request body does not contain required fields  
+
+**PUT /album/:id** - update album info  
+- Server should answer with status code 200 and updated record if request is valid  
+- Server should answer with status code 400 and corresponding message if albumId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === albumId doesn't exist  
+
+**DELETE /album/:id** - delete album  
+- Server should answer with status code 204 if the record is found and deleted  
+- Server should answer with status code 400 and corresponding message if albumId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if record with id === albumId doesn't exist  
+
+### Favorites  
+
+**GET /favs** - get all favorites  
+- Server should answer with status code 200 and all favorite records (not their ids), split by entity type  
+
+**POST /favs/track/:id** - add track to the favorites  
+- Server should answer with status code 201 and corresponding message if track with id === trackId exists  
+- Server should answer with status code 400 and corresponding message if trackId is invalid (not uuid)  
+- Server should answer with status code 422 and corresponding message if track with id === trackId doesn't exist  
+
+**DELETE /favs/track/:id** - delete track from favorites  
+- Server should answer with status code 204 if the track was in favorites and now it's deleted id is found and deleted  
+- Server should answer with status code 400 and corresponding message if trackId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if corresponding track is not favorite  
+
+**POST /favs/album/:id** - add album to the favorites  
+- Server should answer with status code 201 and corresponding message if album with id === albumId exists  
+- Server should answer with status code 400 and corresponding message if albumId is invalid (not uuid)  
+- Server should answer with status code 422 and corresponding message if album with id === albumId doesn't exist  
+
+**DELETE /favs/album/:id** - delete album from favorites  
+- Server should answer with status code 204 if the album was in favorites and now it's deleted id is found and deleted  
+- Server should answer with status code 400 and corresponding message if albumId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if corresponding album is not favorite  
+
+**POST /favs/artist/:id** - add artist to the favorites  
+- Server should answer with status code 201 and corresponding message if artist with id === artistId exists  
+- Server should answer with status code 400 and corresponding message if artistId is invalid (not uuid)  
+- Server should answer with status code 422 and corresponding message if artist with id === artistId doesn't exist  
+
+**DELETE /favs/artist/:id** - delete artist from favorites  
+- Server should answer with status code 204 if the artist was in favorites and now it's deleted id is found and deleted  
+- Server should answer with status code 400 and corresponding message if artistId is invalid (not uuid)  
+- Server should answer with status code 404 and corresponding message if corresponding artist is not favorite  
