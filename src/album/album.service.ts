@@ -79,7 +79,6 @@ export class AlbumService {
 
   remove(id: string) {
     const albumIndex = this.albums.findIndex((album) => album.id === id);
-    console.log(albumIndex);
     if (albumIndex !== -1) {
       this.albums.splice(albumIndex, 1);
       this.trackService.changeTrackAlbumId(id);
