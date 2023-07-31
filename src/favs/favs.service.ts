@@ -3,7 +3,6 @@ import { Favorites } from './interfaces/favs.interface';
 import { ArtistService } from 'src/artist/artist.service';
 import { AlbumService } from 'src/album/album.service';
 import { TrackService } from 'src/track/track.service';
-import { FavDto } from './dto/fav.dto';
 
 @Injectable()
 export class FavsService {
@@ -57,25 +56,6 @@ export class FavsService {
 
   findAll() {
     return this.favorites;
-  }
-
-  findOne(FavDto: FavDto) {
-    const artist = this.favorites.artists.find(
-      (artist) => artist.id === FavDto.id,
-    );
-    const album = this.favorites.albums.find((album) => album.id === FavDto.id);
-    const track = this.favorites.tracks.find((track) => track.id === FavDto.id);
-
-    // return artist ? artist : album ? album : track ? track : new Error();
-    if (artist) {
-      return artist;
-    } else if (album) {
-      return album;
-    } else if (track) {
-      return track;
-    } else {
-      throw new Error();
-    }
   }
 
   removeTrack(id: string) {

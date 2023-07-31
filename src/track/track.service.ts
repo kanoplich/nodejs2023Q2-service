@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, forwardRef } from '@nestjs/common';
 import { CreateTrackDto } from './dto/create-track.dto';
 import { UpdateTrackDto } from './dto/update-track.dto';
 import { Track } from './interfaces/track.interface';
@@ -11,8 +11,10 @@ export class TrackService {
   private readonly tracks: Track[] = [];
 
   constructor(
-    private readonly artistService: ArtistService,
-    private readonly albumService: AlbumService,
+    @Inject(forwardRef(() => ArtistService))
+    private artistService: ArtistService,
+    @Inject(forwardRef(() => AlbumService))
+    private albumService: AlbumService,
   ) {}
 
   create(createTrackDto: CreateTrackDto) {
@@ -91,6 +93,22 @@ export class TrackService {
       return null;
     } else {
       throw new Error();
+    }
+  }
+
+  changeTrackAlbumId(id: string) {
+    for (const track of this.tracks) {
+      if (track.albumId === id) {
+        track.albumId = null;
+      }
+    }
+  }
+
+  changeTrackArtistId(id: string) {
+    for (const track of this.tracks) {
+      if (track.artistId === id) {
+        track.artistId = null;
+      }
     }
   }
 }

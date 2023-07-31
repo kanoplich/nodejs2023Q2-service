@@ -1,12 +1,21 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, Inject, forwardRef } from '@nestjs/common';
 import { CreateArtistDto } from './dto/create-artist.dto';
 import { UpdateArtistDto } from './dto/update-artist.dto';
 import { Artist } from './interfaces/artist.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { TrackService } from 'src/track/track.service';
+import { AlbumService } from 'src/album/album.service';
 
 @Injectable()
 export class ArtistService {
   private readonly artists: Artist[] = [];
+
+  constructor(
+    @Inject(forwardRef(() => AlbumService))
+    private albumService: AlbumService,
+    @Inject(forwardRef(() => TrackService))
+    private trackService: TrackService,
+  ) {}
 
   create(createArtistDto: CreateArtistDto) {
     const artist = {
@@ -56,6 +65,9 @@ export class ArtistService {
     const artistIndex = this.artists.findIndex((artist) => artist.id === id);
     if (artistIndex !== -1) {
       this.artists.splice(artistIndex, 1);
+      this.trackService.changeTrackArtistId(id);
+      this.albumService.changeAlbumArtistId(id);
+
       return null;
     } else {
       throw new Error();

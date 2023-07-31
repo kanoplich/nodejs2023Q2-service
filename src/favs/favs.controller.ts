@@ -1,6 +1,5 @@
 import {
   Controller,
-  Body,
   Get,
   Post,
   Param,
@@ -12,7 +11,6 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { FavsService } from './favs.service';
-import { FavDto } from './dto/fav.dto';
 
 @Controller('favs')
 export class FavsController {
@@ -57,15 +55,6 @@ export class FavsController {
   @Get()
   findAll() {
     return this.favsService.findAll();
-  }
-
-  @Get()
-  findOne(@Body() FavDto: FavDto) {
-    try {
-      return this.favsService.findOne(FavDto);
-    } catch {
-      throw new NotFoundException();
-    }
   }
 
   @Delete('track/:uuid')
