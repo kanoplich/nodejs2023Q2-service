@@ -19,7 +19,12 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "scan": "docker scout quickview nodejs2023q2-service-node:latest & docker scout quickview nodejs2023q2-service-postgres:latest"
+    "scan": "docker scout quickview nodejs2023q2-service-node:latest & docker scout quickview nodejs2023q2-service-postgres:latest",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:create": "npm run typeorm migration:create src/migrations/migrations",
+    "migration:generate": "npm run build && npx typeorm migration:generate -d dist/data-source.js src/migrations/migrations",
+    "migration:run": "npm run build && npm run typeorm migration:run -- -d dist/data-source.js",
+    "migration:revert": "npm run typeorm migration:revert -- -d dist/data-source.js"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
@@ -27,14 +32,17 @@
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/mapped-types": "^1.0.1",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/typeorm": "^10.0.0",
     "bcrypt": "^5.0.1",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "dotenv": "^16.0.1",
     "http-status-codes": "^2.2.0",
+    "pg": "^8.11.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0",
+    "typeorm": "^0.3.17",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

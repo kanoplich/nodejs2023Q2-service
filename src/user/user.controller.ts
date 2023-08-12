@@ -16,7 +16,7 @@ import {
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './interfaces/user.interface';
+import { User } from './entities/user.entity';
 
 @Controller('user')
 export class UserController {
@@ -27,31 +27,31 @@ export class UserController {
     if (!createUserDto.login || !createUserDto.password) {
       throw new BadRequestException();
     } else {
-      return this.userService.create(createUserDto);
+      return await this.userService.create(createUserDto);
     }
   }
 
   @Get()
   async findAll(): Promise<User[]> {
-    return this.userService.findAll();
+    return await this.userService.findAll();
   }
 
   @Get(':uuid')
-  findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.userService.findOne(uuid);
+      return await this.userService.findOne(uuid);
     } catch {
       throw new NotFoundException();
     }
   }
 
   @Put(':uuid')
-  update(
+  async update(
     @Param('uuid', new ParseUUIDPipe()) uuid: string,
     @Body() updateUserDto: UpdateUserDto,
   ) {
     try {
-      return this.userService.update(uuid, updateUserDto);
+      return await this.userService.update(uuid, updateUserDto);
     } catch (e) {
       if (e.message === 'oldPassword is wrong') {
         throw new ForbiddenException({ statusCode: 403, message: e.message });
@@ -65,9 +65,9 @@ export class UserController {
 
   @Delete(':uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.userService.remove(uuid);
+      return await this.userService.remove(uuid);
     } catch {
       throw new NotFoundException();
     }

@@ -1,14 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
-import { User } from './interfaces/user.interface';
+import { User } from './entities/user.entity';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UserService {
-  private readonly users: User[] = [];
+  constructor(
+    @InjectRepository(User)
+    private usersRepository: Repository<User>,
+  ) {}
 
-  create(createUserDto: CreateUserDto) {
+  async create(createUserDto: CreateUserDto) {
     const createdAt = +new Date();
     const user = {
       id: uuidv4(),
@@ -19,57 +24,38 @@ export class UserService {
       updatedAt: createdAt,
     };
 
-    this.users.push(user);
+    const createdUser = this.usersRepository.create(user);
 
-    return {
-      id: user.id,
-      login: user.login,
-      version: user.version,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-    };
+    return await this.usersRepository.save(createdUser);
   }
 
-  findAll(): User[] {
-    const users = this.users.map((user) => {
-      const { password, ...items } = user;
-      return items;
-    });
-    return users;
+  async findAll(): Promise<User[]> {
+    return await this.usersRepository.find();
   }
 
-  findOne(id: string) {
-    const { password, ...user } = this.users.find((user) => user.id === id);
-    if (user) {
-      return user;
-    } else {
-      throw new Error();
-    }
+  async findOne(id: string): Promise<User | null> {
+    const user = await this.usersRepository.findOneBy({ id });
+
+    if (user) return user;
+
+    throw new Error();
   }
 
-  update(id: string, updateUserDto: UpdateUserDto) {
+  async update(id: string, updateUserDto: UpdateUserDto) {
     if (!updateUserDto.oldPassword || !updateUserDto.newPassword) {
       throw new Error('Bad request');
     }
-    const userIndex = this.users.findIndex((user) => user.id === id);
-    if (userIndex !== -1) {
-      if (updateUserDto.oldPassword === this.users[userIndex].password) {
-        const user = {
-          ...this.users[userIndex],
+    const user = await this.usersRepository.findOneBy({ id });
+    if (user) {
+      if (updateUserDto.oldPassword === user.password) {
+        const updateUser = {
+          ...user,
           password: updateUserDto.newPassword,
-          version: this.users[userIndex].version + 1,
+          version: user.version + 1,
           updatedAt: +new Date(),
         };
 
-        this.users.splice(userIndex, 1, user);
-
-        return {
-          id: user.id,
-          login: user.login,
-          version: user.version,
-          createdAt: user.createdAt,
-          updatedAt: user.updatedAt,
-        };
+        return await this.usersRepository.save(updateUser);
       } else {
         throw new Error('oldPassword is wrong');
       }
@@ -78,13 +64,8 @@ export class UserService {
     }
   }
 
-  remove(id: string) {
-    const userIndex = this.users.findIndex((user) => user.id === id);
-    if (userIndex !== -1) {
-      this.users.splice(userIndex, 1);
-      return null;
-    } else {
-      throw new Error();
-    }
+  async remove(id: string): Promise<void> {
+    const remove = await this.usersRepository.delete(id);
+    if (remove.affected === 0) throw new Error();
   }
 }
