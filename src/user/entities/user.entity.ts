@@ -1,5 +1,12 @@
 import { Exclude } from 'class-transformer';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+  VersionColumn,
+} from 'typeorm';
 
 @Entity('user')
 export class User {
@@ -13,12 +20,24 @@ export class User {
   @Exclude()
   password: string;
 
-  @Column()
+  @VersionColumn()
   version: number;
 
-  @Column()
-  createdAt: number;
+  @CreateDateColumn({ type: 'timestamp' })
+  createdAt: Date | number;
 
-  @Column()
-  updatedAt: number;
+  @UpdateDateColumn({ type: 'timestamp' })
+  updatedAt: Date | number;
+
+  toResponse() {
+    const { id, login, version, createdAt, updatedAt } = this;
+
+    return {
+      id,
+      login,
+      version,
+      createdAt: +new Date(createdAt),
+      updatedAt: +new Date(updatedAt),
+    };
+  }
 }

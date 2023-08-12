@@ -14,29 +14,26 @@ export class UserService {
   ) {}
 
   async create(createUserDto: CreateUserDto) {
-    const createdAt = +new Date();
     const user = {
       id: uuidv4(),
       login: createUserDto.login,
       password: createUserDto.password,
-      version: 1,
-      createdAt,
-      updatedAt: createdAt,
     };
 
     const createdUser = this.usersRepository.create(user);
 
-    return await this.usersRepository.save(createdUser);
+    return (await this.usersRepository.save(createdUser)).toResponse();
   }
 
-  async findAll(): Promise<User[]> {
-    return await this.usersRepository.find();
+  async findAll() {
+    const users = await this.usersRepository.find();
+    return users.map((user) => user.toResponse());
   }
 
-  async findOne(id: string): Promise<User | null> {
+  async findOne(id: string) {
     const user = await this.usersRepository.findOneBy({ id });
 
-    if (user) return user;
+    if (user) return user.toResponse();
 
     throw new Error();
   }
@@ -48,14 +45,11 @@ export class UserService {
     const user = await this.usersRepository.findOneBy({ id });
     if (user) {
       if (updateUserDto.oldPassword === user.password) {
-        const updateUser = {
-          ...user,
+        await this.usersRepository.update(id, {
           password: updateUserDto.newPassword,
-          version: user.version + 1,
-          updatedAt: +new Date(),
-        };
+        });
 
-        return await this.usersRepository.save(updateUser);
+        return (await this.usersRepository.findOneBy({ id })).toResponse();
       } else {
         throw new Error('oldPassword is wrong');
       }
