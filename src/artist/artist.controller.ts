@@ -21,35 +21,35 @@ export class ArtistController {
   constructor(private readonly artistService: ArtistService) {}
 
   @Post()
-  create(@Body() createArtistDto: CreateArtistDto) {
+  async create(@Body() createArtistDto: CreateArtistDto) {
     if (!createArtistDto.name || typeof createArtistDto.grammy !== 'boolean') {
       throw new BadRequestException();
     } else {
-      return this.artistService.create(createArtistDto);
+      return await this.artistService.create(createArtistDto);
     }
   }
 
   @Get()
-  findAll() {
-    return this.artistService.findAll();
+  async findAll() {
+    return await this.artistService.findAll();
   }
 
   @Get(':uuid')
-  findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.artistService.findOne(uuid);
+      return await this.artistService.findOne(uuid);
     } catch {
       throw new NotFoundException();
     }
   }
 
   @Put(':uuid')
-  update(
+  async update(
     @Param('uuid', new ParseUUIDPipe()) uuid: string,
     @Body() updateArtistDto: UpdateArtistDto,
   ) {
     try {
-      return this.artistService.update(uuid, updateArtistDto);
+      return await this.artistService.update(uuid, updateArtistDto);
     } catch (e) {
       if (e.message === 'Bad request') {
         throw new BadRequestException();
@@ -61,9 +61,9 @@ export class ArtistController {
 
   @Delete(':uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('uuid', new ParseUUIDPipe()) uuid) {
+  async remove(@Param('uuid', new ParseUUIDPipe()) uuid) {
     try {
-      return this.artistService.remove(uuid);
+      return await this.artistService.remove(uuid);
     } catch {
       throw new NotFoundException();
     }

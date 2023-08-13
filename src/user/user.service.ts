@@ -4,7 +4,6 @@ import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
 
 @Injectable()
 export class UserService {
@@ -15,7 +14,6 @@ export class UserService {
 
   async create(createUserDto: CreateUserDto) {
     const user = {
-      id: uuidv4(),
       login: createUserDto.login,
       password: createUserDto.password,
     };
@@ -31,7 +29,7 @@ export class UserService {
   }
 
   async findOne(id: string) {
-    const user = await this.usersRepository.findOneBy({ id });
+    const user = await this.usersRepository.findOne({ where: { id } });
 
     if (user) return user.toResponse();
 
@@ -42,14 +40,16 @@ export class UserService {
     if (!updateUserDto.oldPassword || !updateUserDto.newPassword) {
       throw new Error('Bad request');
     }
-    const user = await this.usersRepository.findOneBy({ id });
+    const user = await this.usersRepository.findOne({ where: { id } });
     if (user) {
       if (updateUserDto.oldPassword === user.password) {
         await this.usersRepository.update(id, {
           password: updateUserDto.newPassword,
         });
 
-        return (await this.usersRepository.findOneBy({ id })).toResponse();
+        return (
+          await this.usersRepository.findOne({ where: { id } })
+        ).toResponse();
       } else {
         throw new Error('oldPassword is wrong');
       }
@@ -58,8 +58,8 @@ export class UserService {
     }
   }
 
-  async remove(id: string): Promise<void> {
-    const remove = await this.usersRepository.delete(id);
-    if (remove.affected === 0) throw new Error();
+  async remove(id: string) {
+    const removed = await this.usersRepository.delete(id);
+    if (removed.affected === 0) throw new Error();
   }
 }

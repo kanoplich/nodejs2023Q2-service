@@ -17,9 +17,9 @@ export class FavsController {
   constructor(private readonly favsService: FavsService) {}
 
   @Post('track/:uuid')
-  createTrack(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async createTrack(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.createTrack(uuid);
+      return await this.favsService.createTrack(uuid);
     } catch {
       throw new HttpException(
         "Track with id doesn't exist",
@@ -29,9 +29,9 @@ export class FavsController {
   }
 
   @Post('album/:uuid')
-  createAlbum(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async createAlbum(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.createAlbum(uuid);
+      return await this.favsService.createAlbum(uuid);
     } catch {
       throw new HttpException(
         "Track with id doesn't exist",
@@ -41,9 +41,9 @@ export class FavsController {
   }
 
   @Post('artist/:uuid')
-  createArtist(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async createArtist(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.createArtist(uuid);
+      return await this.favsService.createArtist(uuid);
     } catch {
       throw new HttpException(
         "Track with id doesn't exist",
@@ -53,15 +53,15 @@ export class FavsController {
   }
 
   @Get()
-  findAll() {
-    return this.favsService.findAll();
+  async findAll() {
+    return await this.favsService.findAll();
   }
 
   @Delete('track/:uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  removeTrack(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async removeTrack(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.removeTrack(uuid);
+      return await this.favsService.removeTrack(uuid);
     } catch {
       throw new NotFoundException();
     }
@@ -69,9 +69,9 @@ export class FavsController {
 
   @Delete('album/:uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  removeAlbum(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async removeAlbum(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.removeAlbum(uuid);
+      return await this.favsService.removeAlbum(uuid);
     } catch {
       throw new NotFoundException();
     }
@@ -79,9 +79,9 @@ export class FavsController {
 
   @Delete('artist/:uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  removeArtist(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async removeArtist(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.favsService.removeArtist(uuid);
+      return await this.favsService.removeArtist(uuid);
     } catch {
       throw new NotFoundException();
     }
