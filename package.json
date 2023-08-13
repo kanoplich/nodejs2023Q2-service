@@ -24,10 +24,13 @@
     "migration:create": "npm run typeorm migration:create src/migrations/migrations",
     "migration:generate": "npm run build && npx typeorm migration:generate -d dist/data-source.js src/migrations/migrations",
     "migration:run": "npm run build && npm run typeorm migration:run -- -d dist/data-source.js",
-    "migration:revert": "npm run typeorm migration:revert -- -d dist/data-source.js"
+    "migration:revert": "npm run typeorm migration:revert -- -d dist/data-source.js",
+    "start:migration": "npm run build && docker-compose up --build",
+    "stop:migration": "docker-compose down"
   },
   "dependencies": {
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^3.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/jwt": "^9.0.0",
     "@nestjs/mapped-types": "^1.0.1",

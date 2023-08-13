@@ -11,12 +11,12 @@ import { AppDataSource } from './data-source';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(AppDataSource.options),
     UserModule,
     ArtistModule,
     TrackModule,
     AlbumModule,
     FavsModule,
+    TypeOrmModule.forRoot(AppDataSource.options),
   ],
   controllers: [AppController],
   providers: [AppService],
