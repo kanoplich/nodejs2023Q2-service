@@ -75,7 +75,6 @@ export class AlbumService {
     const removed = await this.albumRepository.delete(id);
     if (removed.affected === 0) throw new Error();
     await this.trackService.changeTrackAlbumId(id);
-    return null;
   }
 
   async changeAlbumArtistId(id: string) {

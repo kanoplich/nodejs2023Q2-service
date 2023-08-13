@@ -28,9 +28,10 @@ export class FavsService {
   async createTrack(id: string) {
     const track = await this.trackService.findTrack(id);
     if (track) {
-      const createTrack = this.favTrackRepository.create({ trackId: track.id });
-      this.favTrackRepository.save(createTrack);
-      return;
+      const createTrack = this.favTrackRepository.create({
+        trackId: track.id,
+      });
+      return await this.favTrackRepository.save(createTrack);
     }
     throw new Error();
   }
@@ -39,8 +40,7 @@ export class FavsService {
     const album = await this.albumService.findAlbum(id);
     if (album) {
       const createAlbum = this.favAlbumRepository.create({ albumId: album.id });
-      this.favAlbumRepository.save(createAlbum);
-      return;
+      return await this.favAlbumRepository.save(createAlbum);
     }
     throw new Error();
   }
@@ -52,8 +52,7 @@ export class FavsService {
       const createArtist = this.favArtistRepository.create({
         artistId: artist.id,
       });
-      this.favArtistRepository.save(createArtist);
-      return;
+      return await this.favArtistRepository.save(createArtist);
     }
     throw new Error();
   }
@@ -87,35 +86,17 @@ export class FavsService {
   }
 
   async removeTrack(id: string) {
-    const track = await this.favTrackRepository.findOne({
-      where: { trackId: id },
-    });
-    if (track) {
-      this.favTrackRepository.delete(track.id);
-      return null;
-    }
-    throw new Error();
+    const track = await this.favTrackRepository.delete({ trackId: id });
+    if (track.affected === 0) throw new Error();
   }
 
   async removeAlbum(id: string) {
-    const album = await this.favAlbumRepository.findOne({
-      where: { albumId: id },
-    });
-    if (album) {
-      this.favAlbumRepository.delete(album.id);
-      return null;
-    }
-    throw new Error();
+    const album = await this.favAlbumRepository.delete({ albumId: id });
+    if (album.affected === 0) throw new Error();
   }
 
   async removeArtist(id: string) {
-    const artist = await this.favArtistRepository.findOne({
-      where: { artistId: id },
-    });
-    if (artist) {
-      this.favArtistRepository.delete(artist.id);
-      return null;
-    }
-    throw new Error();
+    const artist = await this.favArtistRepository.delete({ artistId: id });
+    if (artist.affected === 0) throw new Error();
   }
 }

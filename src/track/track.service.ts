@@ -84,7 +84,6 @@ export class TrackService {
   async remove(id: string) {
     const removed = await this.tracksRepository.delete(id);
     if (removed.affected === 0) throw new Error();
-    return null;
   }
 
   async changeTrackAlbumId(id: string) {

@@ -62,7 +62,6 @@ export class ArtistService {
     if (removed.affected === 0) throw new Error();
     await this.trackService.changeTrackArtistId(id);
     await this.albumService.changeAlbumArtistId(id);
-    return null;
   }
 
   async findArtist(id: string) {
