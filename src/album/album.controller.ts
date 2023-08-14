@@ -21,7 +21,7 @@ export class AlbumController {
   constructor(private readonly albumService: AlbumService) {}
 
   @Post()
-  create(@Body() createAlbumDto: CreateAlbumDto) {
+  async create(@Body() createAlbumDto: CreateAlbumDto) {
     if (
       !createAlbumDto.name ||
       typeof createAlbumDto.year !== 'number' ||
@@ -29,31 +29,31 @@ export class AlbumController {
     ) {
       throw new BadRequestException();
     } else {
-      return this.albumService.create(createAlbumDto);
+      return await this.albumService.create(createAlbumDto);
     }
   }
 
   @Get()
-  findAll() {
-    return this.albumService.findAll();
+  async findAll() {
+    return await this.albumService.findAll();
   }
 
   @Get(':uuid')
-  findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.albumService.findOne(uuid);
+      return await this.albumService.findOne(uuid);
     } catch {
       throw new NotFoundException();
     }
   }
 
   @Put(':uuid')
-  update(
+  async update(
     @Param('uuid', new ParseUUIDPipe()) uuid: string,
     @Body() updateAlbumDto: UpdateAlbumDto,
   ) {
     try {
-      return this.albumService.update(uuid, updateAlbumDto);
+      return await this.albumService.update(uuid, updateAlbumDto);
     } catch (e) {
       if (e.message === 'Bad request') {
         throw new BadRequestException();
@@ -65,9 +65,9 @@ export class AlbumController {
 
   @Delete(':uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.albumService.remove(uuid);
+      return await this.albumService.remove(uuid);
     } catch {
       throw new NotFoundException();
     }

@@ -21,7 +21,7 @@ export class TrackController {
   constructor(private readonly trackService: TrackService) {}
 
   @Post()
-  create(@Body() createTrackDto: CreateTrackDto) {
+  async create(@Body() createTrackDto: CreateTrackDto) {
     if (
       !createTrackDto.name ||
       typeof createTrackDto.duration !== 'number' ||
@@ -30,31 +30,31 @@ export class TrackController {
     ) {
       throw new BadRequestException();
     } else {
-      return this.trackService.create(createTrackDto);
+      return await this.trackService.create(createTrackDto);
     }
   }
 
   @Get()
-  findAll() {
-    return this.trackService.findAll();
+  async findAll() {
+    return await this.trackService.findAll();
   }
 
   @Get(':uuid')
-  findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async findOne(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.trackService.findOne(uuid);
+      return await this.trackService.findOne(uuid);
     } catch {
       throw new NotFoundException();
     }
   }
 
   @Put(':uuid')
-  update(
+  async update(
     @Param('uuid', new ParseUUIDPipe()) uuid: string,
     @Body() updateTrackDto: UpdateTrackDto,
   ) {
     try {
-      return this.trackService.update(uuid, updateTrackDto);
+      return await this.trackService.update(uuid, updateTrackDto);
     } catch (e) {
       if (e.message === 'Bad request') {
         throw new BadRequestException();
@@ -66,9 +66,9 @@ export class TrackController {
 
   @Delete(':uuid')
   @HttpCode(HttpStatus.NO_CONTENT)
-  remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
+  async remove(@Param('uuid', new ParseUUIDPipe()) uuid: string) {
     try {
-      return this.trackService.remove(uuid);
+      return await this.trackService.remove(uuid);
     } catch {
       throw new NotFoundException();
     }
