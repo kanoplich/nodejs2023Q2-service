@@ -1,6 +1,5 @@
 import { LoggerService } from '@nestjs/common';
 import { writeFile } from 'fs/promises';
-import { join } from 'path';
 
 export class CustomLogger implements LoggerService {
   log(message: string, context: string) {
@@ -47,12 +46,12 @@ export class CustomLogger implements LoggerService {
   }
 
   private async writeFileLogs(log: string) {
-    const pathToLog = join('logger', 'logs.txt');
-    await writeFile(pathToLog, `${log}\n`, { flag: 'a' });
+    await writeFile('logger/logs.txt', `${log}\n`, { flag: 'a' });
   }
 
   private async writeFileErrors(error: string) {
-    const pathToLog = join('logger', 'errors.txt');
-    await writeFile(pathToLog, `${error}\n`, { flag: 'a' });
+    await writeFile('logger/errors.txt', `${error}\n`, { flag: 'a' });
   }
 }
+
+/**/

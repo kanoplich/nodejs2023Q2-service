@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { CustomLogger } from './utils/custom-logger';
 import 'dotenv/config';
+import { HttpExceptionFilter } from './utils/exception-filter';
 
 const PORT = process.env.PORT || 4000;
 
@@ -11,6 +12,7 @@ async function bootstrap() {
   });
 
   app.useLogger(new CustomLogger());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
   await app.listen(PORT, () => {
     console.log(`Server has been started on ${PORT}...`);

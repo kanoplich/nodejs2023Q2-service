@@ -1,0 +1,2 @@
+[Nest] 18924 - 19.08.2023, 22:44:28 ERROR [/track] method: POST, url: /track, status: 400, body: {}, query: {}
+[Nest] 17692 - 19.08.2023, 22:45:07 ERROR [/track/asda] method: POST, url: /track/asda, status: 404, body: {}, query: {}

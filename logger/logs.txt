@@ -1,0 +1,338 @@
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [NestFactory] Starting Nest application...
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] AppController {/}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] UserController {/user}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 10924 - 19.08.2023, 22:37:03 LOG [NestApplication] Nest application successfully started
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [NestFactory] Starting Nest application...
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] AppController {/}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] UserController {/user}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 6484 - 19.08.2023, 22:38:09 LOG [NestApplication] Nest application successfully started
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [NestFactory] Starting Nest application...
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] AppController {/}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] UserController {/user}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 19136 - 19.08.2023, 22:38:31 LOG [NestApplication] Nest application successfully started
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [NestFactory] Starting Nest application...
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] AppController {/}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] UserController {/user}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 12748 - 19.08.2023, 22:42:19 LOG [NestApplication] Nest application successfully started
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [NestFactory] Starting Nest application...
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] AppController {/}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] UserController {/user}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 952 - 19.08.2023, 22:43:10 LOG [NestApplication] Nest application successfully started
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [NestFactory] Starting Nest application...
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] AppController {/}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] UserController {/user}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 18924 - 19.08.2023, 22:44:14 LOG [NestApplication] Nest application successfully started
+[Nest] 18924 - 19.08.2023, 22:44:28 ERROR [/track] method: POST, url: /track, status: 400, body: {}, query: {}
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [NestFactory] Starting Nest application...
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] AppModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmCoreModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TypeOrmModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] UserModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] ArtistModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] AlbumModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] TrackModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [InstanceLoader] FavsModule dependencies initialized
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] AppController {/}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] UserController {/user}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/user, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/user, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/user/:uuid, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/user/:uuid, PUT} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/user/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] ArtistController {/artist}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/artist, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/artist, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/artist/:uuid, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/artist/:uuid, PUT} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/artist/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] AlbumController {/album}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/album, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/album, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/album/:uuid, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/album/:uuid, PUT} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/album/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] TrackController {/track}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/track, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/track, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/track/:uuid, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/track/:uuid, PUT} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/track/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RoutesResolver] FavsController {/favs}:
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/track/:uuid, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/album/:uuid, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, POST} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs, GET} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/track/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/album/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [RouterExplorer] Mapped {/favs/artist/:uuid, DELETE} route
+[Nest] 17692 - 19.08.2023, 22:45:05 LOG [NestApplication] Nest application successfully started
+[Nest] 17692 - 19.08.2023, 22:45:07 ERROR [/track/asda] method: POST, url: /track/asda, status: 404, body: {}, query: {}
