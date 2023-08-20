@@ -53,5 +53,3 @@ export class CustomLogger implements LoggerService {
     await writeFile('logger/errors.txt', `${error}\n`, { flag: 'a' });
   }
 }
-
-/**/

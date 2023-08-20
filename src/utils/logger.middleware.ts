@@ -10,16 +10,16 @@ export class LoggerMiddleware implements NestMiddleware {
     const { originalUrl, method, body, query } = req;
 
     res.on('finish', () => {
-      const { statusCode } = res;
-
-      const message = `method: ${method}, url: ${originalUrl}, status: ${statusCode}, body: ${JSON.stringify(
-        body,
-      )}, query: ${JSON.stringify(query)}`;
+      const { statusCode, statusMessage } = res;
       const context = req.url;
 
       if (statusCode < 400) {
+        const message = `method: ${method}, url: ${originalUrl}, status: ${statusCode}, body: ${JSON.stringify(
+          body,
+        )}, query: ${JSON.stringify(query)}`;
         this.logger.log(message, context);
       } else {
+        const message = `method: ${method}, url: ${originalUrl}, status: ${statusCode}, message: ${statusMessage}`;
         this.logger.error(message, context);
       }
     });
