@@ -1,72 +1,44 @@
-# Home Library Service
+# Home Library Service 2
 
-## Prerequisites
+## Download a GitHub Repository
 
-- Git - [Download & Install Git](https://git-scm.com/downloads).
-- Node.js - [Download & Install Node.js](https://nodejs.org/en/download/) and the npm package manager.
+- git clone https://github.com/kanoplich/nodejs2023Q2-service.git
 
-## Downloading
+## Switch Branch
 
-```
-git clone {repository URL}
-```
+- git checkout develop
 
-## Installing NPM modules
+## Install Dependencies
 
-```
-npm install
-```
+- npm install
 
-## Running application
+## Change file .env.example to .env
 
-```
-npm start
-```
+## Run App
 
-After starting the app on port (4000 as default) you can open
-in your browser OpenAPI documentation by typing http://localhost:4000/doc/.
-For more information about OpenAPI/Swagger please visit https://swagger.io/.
+- npm run docker:start
+- npm run start:dev
 
-## Testing
+## Run Tests
 
-After application running open new terminal and enter:
+- npm run test
 
-To run all tests without authorization
+## Stop App
 
-```
-npm run test
-```
+- npm run docker:stop
 
-To run only one of all test suites
+## Scripts
 
-```
-npm run test -- <path to suite>
-```
-
-To run all test with authorization
-
-```
-npm run test:auth
-```
-
-To run only specific test suite with authorization
-
-```
-npm run test:auth -- <path to suite>
-```
-
-### Auto-fix and format
-
-```
-npm run lint
-```
-
-```
-npm run format
-```
-
-### Debugging in VSCode
-
-Press <kbd>F5</kbd> to debug.
-
-For more information, visit: https://code.visualstudio.com/docs/editor/debugging
+- **start:prod** - the application is run in production mode
+- **start:dev** - the application is run in development mode
+- **build** - build project
+- **lint** - start eslint
+- **format** - eslint fix
+- **test** - start tests
+- **scan** - vulnerabilities scanning
+- **migration:create** - creating a new migration
+- **migration:generate** - generating migrations
+- **migration:run** - running migrations
+- **migration:revert** - reverting migrations
+- **docker:start** - run app
+- **docker:stop** - stop app
