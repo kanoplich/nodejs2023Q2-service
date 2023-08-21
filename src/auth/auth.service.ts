@@ -12,11 +12,11 @@ export class AuthService {
     return await this.userService.create(createAuthDto);
   }
 
-  createLogin(createAuthDto: CreateAuthDto) {
+  createLogin() {
     return 'This action adds a new auth';
   }
 
-  createRefresh(createAuthDto: CreateAuthDto) {
+  createRefresh() {
     return 'This action adds a new auth';
   }
 }

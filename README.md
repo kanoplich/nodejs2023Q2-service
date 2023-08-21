@@ -6,7 +6,7 @@
 
 ## Switch Branch
 
-- npm checkout develop
+- git checkout develop
 
 ## Install Dependencies
 
@@ -16,7 +16,8 @@
 
 ## Run App
 
-- npm run start:migration
+- npm run docker:start
+- npm run start:dev
 
 ## Run Tests
 
@@ -24,7 +25,7 @@
 
 ## Stop App
 
-- npm run stop:migration
+- npm run docker:stop
 
 ## Scripts
 
@@ -39,5 +40,5 @@
 - **migration:generate** - generating migrations
 - **migration:run** - running migrations
 - **migration:revert** - reverting migrations
-- **start:migration** - run app
-- **stop:migration** - stop app
+- **docker:start** - run app
+- **docker:stop** - stop app

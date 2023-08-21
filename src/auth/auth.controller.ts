@@ -21,11 +21,11 @@ export class AuthController {
   }
 
   @Post('login')
-  createLogin(@Body() createAuthDto: CreateAuthDto) {
-    return this.authService.createLogin(createAuthDto);
+  createLogin() {
+    return this.authService.createLogin();
   }
   @Post('refresh')
-  createRefresh(@Body() createAuthDto: CreateAuthDto) {
-    return this.authService.createRefresh(createAuthDto);
+  createRefresh() {
+    return this.authService.createRefresh();
   }
 }
