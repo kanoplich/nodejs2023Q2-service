@@ -10,6 +10,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppDataSource } from './data-source';
 import { CustomLogger } from './utils/custom-logger';
 import { LoggerMiddleware } from './utils/logger.middleware';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { LoggerMiddleware } from './utils/logger.middleware';
     TrackModule,
     AlbumModule,
     FavsModule,
+    AuthModule,
     TypeOrmModule.forRoot(AppDataSource.options),
   ],
   controllers: [AppController],
